@@ -4,7 +4,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class JsonGsonMenuTest01 {
+public class JsonGsonMenuTest {
 
     public static void main(String[] args) {
         System.out.println("-------以下做序列化的動作，意思是做出Json字串--------");
@@ -13,7 +13,7 @@ public class JsonGsonMenuTest01 {
         MealData md = new MealData(34,"火腿漢堡",60,"好吃的漢堡","hamburg","英數組合字串的圖片");
         ClientInsertMealRequest m = new ClientInsertMealRequest(2,"insert",md);
         String jsonSerialization = gson.toJson(m);//序列化，製作一個Json字串
-        System.out.println(jsonSerialization+"\n");//印出序列化的Json
+        System.out.println(jsonSerialization+"\n");//印出序列化的Json字串
         
         System.out.println("-------以下做反序列化，反序列化意思為取出Json中的值--------");
         ClientInsertMealRequest enums = gson.fromJson(jsonSerialization, ClientInsertMealRequest.class);//jsonSerialization為原始的json字串，此行把json字串放進物件之中
